@@ -2,26 +2,36 @@ package ru.alcoholists.hackers.HackMeV2.model;
 
 import ru.alcoholists.hackers.HackMeV2.dto.OperationResult;
 import ru.alcoholists.hackers.HackMeV2.model.command.Command;
-import ru.alcoholists.hackers.HackMeV2.model.filestructure.folder.Folder;
-import ru.alcoholists.hackers.HackMeV2.model.filestructure.folder.FolderInterface;
+import ru.alcoholists.hackers.HackMeV2.model.filestructure.Folder;
 import ru.alcoholists.hackers.HackMeV2.model.net.Ip;
 import ru.alcoholists.hackers.HackMeV2.model.net.Port;
 
+import java.util.ArrayList;
 import java.util.Set;
 
 public abstract class AbstractComputer implements Computer {
     protected Ip ip;
     protected Set<Port> ports;
-    protected final FolderInterface rootFolder;
+    protected final Folder rootFolder;
 
     private AbstractComputer(Ip ip, Set<Port> ports) {
         this.ip = ip;
         this.ports = ports;
-        this.rootFolder = new Folder();
+        this.rootFolder = createRootFolder();
+    }
+
+    // Creates the / folder
+    private Folder createRootFolder() {
+        return new Folder(
+                "",
+                "",
+                new ArrayList<>(),
+                null,
+                this);
     }
 
     @Override
-    public FolderInterface getRootFolder() {
+    public Folder getRootFolder() {
         return rootFolder;
     }
 

@@ -1,11 +1,23 @@
 package ru.alcoholists.hackers.HackMeV2.model.filestructure;
 
+import ru.alcoholists.hackers.HackMeV2.model.Computer;
+
+import java.util.List;
+
 public interface StructureInterface {
 
-    public void deleteElement();
-    public void copyElement();
-    public void changeName();
-    public void grantAuthorities();
-    public void move();
+    void delete();
+    StructureInterface clone();
+    void setName(String name);
+    void setAuthorities(String authorities);
+    void setParent(Folder parent);
+    void move(String newPath);
+    String getName();
+    Folder getParent();
+    Computer getHost();
+    String getAuthorities();
 
+    default List<StructureInterface> getChildren() {
+        return List.of(this);
+    }
 }
