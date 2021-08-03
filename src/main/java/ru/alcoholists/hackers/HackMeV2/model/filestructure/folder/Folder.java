@@ -23,8 +23,6 @@ public class Folder implements FolderInterface {
 
     Folder folderParent;
 
-
-
     @Override
     public void changeDir() {
 
