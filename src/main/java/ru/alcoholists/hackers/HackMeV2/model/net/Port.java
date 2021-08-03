@@ -1,14 +1,16 @@
-package ru.alcoholists.hackers.HackMeV2.model;
+package ru.alcoholists.hackers.HackMeV2.model.net;
 
 
-import lombok.Value;
+import lombok.Data;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
-@Value
+@Data
 public class Port {
     @Min(0)
     @Max(2 << 16)
-    int port;
+    private final int port;
+
+    private boolean available;
 }

@@ -1,4 +1,4 @@
-package ru.alcoholists.hackers.HackMeV2.filestructure.file;
+package ru.alcoholists.hackers.HackMeV2.model.filestructure.file;
 
 import org.springframework.stereotype.Component;
 
