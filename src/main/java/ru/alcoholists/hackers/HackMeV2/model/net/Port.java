@@ -1,4 +1,4 @@
-package ru.alcoholists.hackers.HackMeV2.model;
+package ru.alcoholists.hackers.HackMeV2.model.net;
 
 
 import lombok.Value;

@@ -1,4 +1,4 @@
-package ru.alcoholists.hackers.HackMeV2.filestructure;
+package ru.alcoholists.hackers.HackMeV2.model.filestructure;
 
 public interface StructureInterface {
 

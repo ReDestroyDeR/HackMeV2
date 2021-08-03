@@ -1,14 +1,28 @@
-package ru.alcoholists.hackers.HackMeV2.filestructure.folder;
+package ru.alcoholists.hackers.HackMeV2.model.filestructure.folder;
 
-import org.springframework.stereotype.Component;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NonNull;
+import lombok.Setter;
+import ru.alcoholists.hackers.HackMeV2.model.filestructure.StructureInterface;
 
-@Component
+import java.util.List;
+
+
+@AllArgsConstructor
+@Getter
+@Setter
 public class Folder implements FolderInterface {
 
+    @NonNull
     String folderName;
+    @NonNull
     String folderAuthorities;
-    Folder[] folderChildren;
+    @NonNull
+    List<StructureInterface> folderChildren;
+
     Folder folderParent;
+
 
 
     @Override
